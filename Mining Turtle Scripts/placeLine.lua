@@ -1,6 +1,6 @@
 local fuelLevel = turtle.getFuelLevel()
 
-if not (fuelLevel == "unlimited") and (fuelLevel > 128) then
+if not (fuelLevel == "unlimited") and (fuelLevel < 128) then
 	local item = turtle.getItemDetail()
 	if item.name == "minecraft:coal" then
 		turtle.refuel(item.count - 1)
