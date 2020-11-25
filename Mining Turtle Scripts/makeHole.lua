@@ -33,7 +33,10 @@ end
 local upFlag = false
 local reverseFlag = false
 
-for i = 1, math.floor(width / 2), 1 do
+local newWidth = math.floor(width / 2)
+print("calculated width:", newWidth)
+
+for i = 1, newWidth, 1 do
 	for k = 1, depth, 1 do
 		for j = 1, length, 1 do
 			if reverseFlag then
@@ -57,12 +60,14 @@ for i = 1, math.floor(width / 2), 1 do
 					turtle.turnRight()
 				end
 			end
+			print("j:", j, "\nlength:", length)
 			if not (j == length) then
 				turtle.dig()
 				turtle.forward()
 			end
 		end
 
+		print("k:", k, "\ndepth:", depth)
 		if not (k == depth) then
 			if upFlag then
 				turtle.digUp()
@@ -80,7 +85,7 @@ for i = 1, math.floor(width / 2), 1 do
 		reverseFlag = not reverseFlag
 	end
 
-	if not (i == math.floor(width / 2)) then
+	if not (i == newWidth) then
 		if reverseFlag then
 			if direction == "right" then
 				turtle.turnLeft()
