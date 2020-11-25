@@ -13,13 +13,13 @@ end
 
 totalMoved = 0
 
-for i=0, 32, 1 do
+for i=1, 32, 1 do
 	turtle.dig()
 	local moved = turtle.forward()
 	if (moved) then totalMoved = totalMoved + 1 end
 	turtle.digDown()
 end
 
-for i=0, totalMoved, 1 do
+for i=1, totalMoved, 1 do
 	turtle.back()
 end
