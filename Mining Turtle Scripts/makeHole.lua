@@ -14,7 +14,7 @@ local depth = read()
 
 if not (direction == "left" or direction == "right")  then
 	print("direction not correct")
-	exit()
+	do return end
 end
 
 local fuelCost = length * math.floor(width / 2) * depth
@@ -34,7 +34,6 @@ local upFlag = false
 local reverseFlag = false
 
 local newWidth = math.floor(width / 2)
-print("calculated width:", newWidth)
 
 for i = 1, newWidth, 1 do
 	for k = 1, depth, 1 do
@@ -60,15 +59,14 @@ for i = 1, newWidth, 1 do
 					turtle.turnRight()
 				end
 			end
-			print("j:", j, "\nlength:", length)
-			if not (j == length) then
+
+			if j ~= length then
 				turtle.dig()
 				turtle.forward()
 			end
 		end
 
-		print("k:", k, "\ndepth:", depth)
-		if not (k == depth) then
+		if k ~= depth then
 			if upFlag then
 				turtle.digUp()
 				turtle.up()
@@ -85,7 +83,7 @@ for i = 1, newWidth, 1 do
 		reverseFlag = not reverseFlag
 	end
 
-	if not (i == newWidth) then
+	if i ~= newWidth then
 		if reverseFlag then
 			if direction == "right" then
 				turtle.turnLeft()
