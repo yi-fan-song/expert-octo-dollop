@@ -11,12 +11,15 @@ if not (fuelLevel == "unlimited") and (fuelLevel > 64) then
 	end
 end
 
+totalMoved = 0
+
 for i=0, 32, 1 do
 	turtle.dig()
-	turtle.forward()
+	local moved = turtle.forward()
+	if (moved) then totalMoved = totalMoved + 1 end
 	turtle.digDown()
 end
 
-for i=0, 32, 1 do
+for i=0, totalMoved, 1 do
 	turtle.back()
 end
