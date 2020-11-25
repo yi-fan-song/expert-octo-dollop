@@ -60,13 +60,13 @@ for i = 1, newWidth, 1 do
 				end
 			end
 
-			if j ~= length then
+			if tostring(j) ~= length then
 				turtle.dig()
 				turtle.forward()
 			end
 		end
 
-		if k ~= depth then
+		if tostring(k) ~= depth then
 			if upFlag then
 				turtle.digUp()
 				turtle.up()
