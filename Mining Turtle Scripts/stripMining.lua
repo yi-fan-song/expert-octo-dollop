@@ -5,7 +5,7 @@ if not fuelLevel == "unlimited" then
 	if item.name == "minecraft:coal" then
 		turtle.refuel(item.count - 1)
 	end
-	if fuelLevel < 64 then
+	if turtle.getFuelLevel() < 64 then
 		print("not enough fuel")
 		do return end
 	end
