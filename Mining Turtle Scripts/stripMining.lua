@@ -11,7 +11,7 @@ if not (fuelLevel == "unlimited") and (fuelLevel < 128) then
 	end
 end
 
-totalMoved = 0
+local totalMoved = 0
 
 for i=1, 32, 1 do
 	turtle.dig()

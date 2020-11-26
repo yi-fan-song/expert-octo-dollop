@@ -20,7 +20,7 @@ elseif direction == "right" then
 	turtle.turnRight()
 else
 	print("unknown direction")
-	exit()
+	do return end
 end
 
 for i=1, 3, 1 do
@@ -32,4 +32,3 @@ if direction == "left" then
 elseif direction == "right" then
 	turtle.turnLeft()
 end
-	
