@@ -77,10 +77,10 @@ for i = 1, newWidth, 1 do
 
 			turtle.turnRight()
 			turtle.turnRight()
-			
+
+			reverseFlag = not reverseFlag
 		end
 
-		reverseFlag = not reverseFlag
 	end
 
 	if i ~= newWidth then
@@ -115,5 +115,6 @@ for i = 1, newWidth, 1 do
 		end
 	end
 
+	reverseFlag = not reverseFlag
 	upFlag = not upFlag
 end
